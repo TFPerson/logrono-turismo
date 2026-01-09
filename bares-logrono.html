@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bares en Logroño | Salir de noche y vinos</title>
+<meta name="description" content="Guía completa de bares en Logroño: zonas para salir de noche, vinos, copas y mapa interactivo.">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  line-height:1.6;
+}
+
+/* MENÚ */
+.menu {
+  background:#8b0000;
+  padding:15px;
+  text-align:center;
+}
+.menu a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold;
+}
+.menu a:hover {
+  text-decoration:underline;
+}
+
+/* CABECERA */
+.header {
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono4.jpg");
+  background-size:cover;
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+}
+
+/* SECCIONES */
+section {
+  max-width:1100px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:14px;
+}
+
+/* RANKINGS */
+.rank {
+  background:#fafafa;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+/* MAPA */
+.filters button {
+  margin:5px;
+  padding:10px 16px;
+  border:none;
+  border-radius:20px;
+  background:#8b0000;
+  color:white;
+  cursor:pointer;
+}
+#map {
+  height:450px;
+  border-radius:14px;
+}
+
+/* ENLACES */
+a.link {
+  color:#8b0000;
+  font-weight:bold;
+  text-decoration:none;
+}
+a.link:hover {
+  text-decoration:underline;
+}
+
+footer {
+  text-align:center;
+  color:#777;
+  margin:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacer-logrono.html">Qué hacer</a>
+  <a href="bares-logrono.html">Bares</a>
+  <a href="restaurantes-logrono.html">Restaurantes</a>
+  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+</nav>
+
+<div class="header">
+  <h1>Bares en Logroño</h1>
+  <p>Dónde salir de noche, vinos y copas</p>
+</div>
+
+<section>
+<h2>🍷 Zonas para salir en Logroño</h2>
+
+<div class="rank">
+<strong>Calle Laurel</strong><br>
+La zona más famosa, ideal para vinos, pinchos y ambiente animado.
+</div>
+
+<div class="rank">
+<strong>Calle San Juan</strong><br>
+Alternativa más tranquila, con bares tradicionales y menos masificación.
+</div>
+
+<div class="rank">
+<strong>Zona Centro</strong><br>
+Copas, pubs y música hasta tarde.
+</div>
+</section>
+
+<section>
+<h2>⭐ Mejores bares para salir</h2>
+
+<div class="rank">
+<strong>1. Calle Laurel</strong><br>
+Ambiente constante, tanto de día como de noche.
+</div>
+
+<div class="rank">
+<strong>2. Calle San Juan</strong><br>
+Ideal para una ruta más relajada.
+</div>
+
+<div class="rank">
+<strong>3. Zona Centro</strong><br>
+Perfecta para continuar la noche con copas.
+</div>
+</section>
+
+<section>
+<h2>📍 Mapa de bares en Logroño</h2>
+
+<div class="filters">
+<button onclick="filtrar('todos')">Todo</button>
+<button onclick="filtrar('bar')">Bares</button>
+</div>
+
+<div id="map"></div>
+</section>
+
+<section>
+<h2>ℹ️ Consejos locales</h2>
+<p>
+Para disfrutar mejor, evita las horas punta en Laurel los fines de semana.
+Si buscas algo más tranquilo, San Juan es una excelente opción.
+</p>
+<p>
+👉 También puedes ver <a class="link" href="restaurantes-logrono.html">dónde comer en Logroño</a>
+o <a class="link" href="hoy-en-logrono.html">planes para hoy</a>.
+</p>
+</section>
+
+<footer>
+Página creada por TFPerson · Guía turística independiente
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map("map").setView([42.466,-2.445],14);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap"
+}).addTo(map);
+
+const bares = [
+  {n:"Calle Laurel", c:[42.4668,-2.4446]},
+  {n:"Calle San Juan", c:[42.4678,-2.4435]},
+  {n:"Zona Centro", c:[42.4655,-2.4465]}
+];
+
+let markers=[];
+function filtrar(tipo){
+  markers.forEach(m=>map.removeLayer(m));
+  markers=[];
+  bares.forEach(b=>{
+    markers.push(L.marker(b.c).addTo(map).bindPopup(b.n));
+  });
+}
+filtrar("todos");
+</script>
+
+</body>
+</html>

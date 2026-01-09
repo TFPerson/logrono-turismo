@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Qué hacer en Logroño | Guía local completa</title>
+<meta name="description" content="Qué hacer en Logroño: bares, restaurantes, planes, mapa interactivo y agenda. Guía local para disfrutar la ciudad.">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  line-height:1.6;
+}
+
+/* MENÚ */
+.menu {
+  background:#8b0000;
+  padding:15px;
+  text-align:center;
+}
+.menu a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold;
+}
+.menu a:hover {
+  text-decoration:underline;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono1.jpg");
+  background-size:cover;
+  color:white;
+  padding:120px 20px;
+  text-align:center;
+}
+
+/* SECCIONES */
+section {
+  max-width:1100px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:14px;
+}
+
+/* BUSCADOR */
+input {
+  width:100%;
+  padding:14px;
+  font-size:16px;
+}
+
+/* GALERÍA */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.gallery img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* RANKINGS */
+.rank {
+  background:#fafafa;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+
+/* MAPA */
+.filters button {
+  margin:5px;
+  padding:10px 16px;
+  border:none;
+  border-radius:20px;
+  background:#8b0000;
+  color:white;
+  cursor:pointer;
+}
+#map {
+  height:450px;
+  border-radius:14px;
+}
+
+footer {
+  text-align:center;
+  color:#777;
+  margin:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacer-logrono.html">Qué hacer</a>
+  <a href="bares-logrono.html">Bares</a>
+  <a href="restaurantes-logrono.html">Restaurantes</a>
+  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+</nav>
+
+<div class="hero">
+  <h1>Qué hacer en Logroño</h1>
+  <p>Guía local para disfrutar la ciudad sin prisas</p>
+</div>
+
+<section>
+<h2>🔍 Busca un plan</h2>
+<input id="buscador" placeholder="Ej: bares, paseo, noche, gratis…" onkeyup="buscar()">
+<ul id="resultados"></ul>
+</section>
+
+<section>
+<h2>⭐ Rankings populares</h2>
+<div class="rank">✔ Qué hacer en Logroño de noche</div>
+<div class="rank">✔ Mejores bares de Logroño</div>
+<div class="rank">✔ Planes gratis en Logroño</div>
+<div class="rank">✔ Qué ver en Logroño en un día</div>
+</section>
+
+<section>
+<h2>📍 Mapa interactivo</h2>
+<div class="filters">
+<button onclick="filtrar('todos')">Todo</button>
+<button onclick="filtrar('bar')">Bares</button>
+<button onclick="filtrar('plan')">Planes</button>
+</div>
+<div id="map"></div>
+</section>
+
+<section>
+<h2>📸 Logroño en imágenes</h2>
+<div class="gallery">
+  <img src="img/logrono1.jpg">
+  <img src="img/logrono2.jpg">
+  <img src="img/logrono3.jpg">
+  <img src="img/logrono4.jpg">
+  <img src="img/logrono5.jpg">
+</div>
+</section>
+
+<footer>
+Página creada por TFPerson · Guía turística independiente
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const data=["bares","noche","paseo","gratis","restaurantes","planes"];
+function buscar(){
+  const q=document.getElementById("buscador").value.toLowerCase();
+  document.getElementById("resultados").innerHTML=
+    data.filter(d=>d.includes(q)).map(x=>"<li>"+x+"</li>").join("");
+}
+
+const map=L.map("map").setView([42.466,-2.445],14);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+const sitios=[
+{tipo:"bar",n:"Calle Laurel",c:[42.4668,-2.4446]},
+{tipo:"plan",n:"Parque del Ebro",c:[42.4692,-2.4484]}
+];
+
+let markers=[];
+function filtrar(t){
+  markers.forEach(m=>map.removeLayer(m));
+  markers=[];
+  sitios.forEach(s=>{
+    if(t==="todos"||s.tipo===t){
+      markers.push(L.marker(s.c).addTo(map).bindPopup(s.n));
+    }
+  });
+}
+filtrar("todos");
+</script>
+
+</body>
+</html>

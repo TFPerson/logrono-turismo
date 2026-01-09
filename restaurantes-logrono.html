@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Restaurantes en Logroño | Dónde comer bien</title>
+<meta name="description" content="Guía completa de restaurantes en Logroño: dónde comer bien, zonas recomendadas, rankings y mapa interactivo.">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  line-height:1.6;
+}
+
+/* MENÚ */
+.menu {
+  background:#8b0000;
+  padding:15px;
+  text-align:center;
+}
+.menu a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold;
+}
+.menu a:hover {
+  text-decoration:underline;
+}
+
+/* CABECERA */
+.header {
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("img/logrono3.jpg");
+  background-size:cover;
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+}
+
+/* SECCIONES */
+section {
+  max-width:1100px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:14px;
+}
+
+/* RANKINGS */
+.rank {
+  background:#fafafa;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+/* MAPA */
+#map {
+  height:450px;
+  border-radius:14px;
+}
+
+/* ENLACES */
+a.link {
+  color:#8b0000;
+  font-weight:bold;
+  text-decoration:none;
+}
+a.link:hover {
+  text-decoration:underline;
+}
+
+footer {
+  text-align:center;
+  color:#777;
+  margin:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacer-logrono.html">Qué hacer</a>
+  <a href="bares-logrono.html">Bares</a>
+  <a href="restaurantes-logrono.html">Restaurantes</a>
+  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+</nav>
+
+<div class="header">
+  <h1>Restaurantes en Logroño</h1>
+  <p>Dónde comer bien en la capital del vino</p>
+</div>
+
+<section>
+<h2>🍽️ Zonas para comer en Logroño</h2>
+
+<div class="rank">
+<strong>Calle Laurel y San Juan</strong><br>
+Perfectas para pinchos, cocina tradicional y ambiente local.
+</div>
+
+<div class="rank">
+<strong>Casco antiguo</strong><br>
+Restaurantes de cocina riojana clásica y menús tradicionales.
+</div>
+
+<div class="rank">
+<strong>Centro</strong><br>
+Propuestas modernas, cocina actual y restaurantes variados.
+</div>
+</section>
+
+<section>
+<h2>⭐ Mejores restaurantes recomendados</h2>
+
+<div class="rank">
+<strong>1. Cocina tradicional riojana</strong><br>
+Platos contundentes, productos locales y recetas de siempre.
+</div>
+
+<div class="rank">
+<strong>2. Pinchos y bares gastronómicos</strong><br>
+Ideales para comer de pie y probar varios sabores.
+</div>
+
+<div class="rank">
+<strong>3. Restaurantes modernos</strong><br>
+Opciones actuales para quien busca algo diferente.
+</div>
+</section>
+
+<section>
+<h2>📍 Mapa de restaurantes en Logroño</h2>
+<div id="map"></div>
+</section>
+
+<section>
+<h2>ℹ️ Consejos locales</h2>
+<p>
+Para evitar esperas, intenta comer un poco antes de las horas punta.
+Si quieres pinchos, Laurel y San Juan son imprescindibles.
+</p>
+<p>
+👉 También puedes ver <a class="link" href="bares-logrono.html">bares para salir de noche</a>
+o <a class="link" href="hoy-en-logrono.html">planes para hoy</a>.
+</p>
+</section>
+
+<footer>
+Página creada por TFPerson · Guía turística independiente
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map("map").setView([42.466,-2.445],14);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap"
+}).addTo(map);
+
+const restaurantes = [
+  {n:"Calle Laurel", c:[42.4668,-2.4446]},
+  {n:"Casco antiguo", c:[42.4665,-2.4449]},
+  {n:"Centro", c:[42.4658,-2.4468]}
+];
+
+restaurantes.forEach(r=>{
+  L.marker(r.c).addTo(map).bindPopup(r.n);
+});
+</script>
+
+</body>
+</html>

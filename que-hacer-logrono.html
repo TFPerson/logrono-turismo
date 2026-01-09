@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Qué hacer en Logroño | Planes y visitas imprescindibles</title>
+<meta name="description" content="Descubre qué hacer en Logroño: planes imprescindibles, paseos, visitas culturales y mapa interactivo.">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  line-height:1.6;
+}
+
+/* MENÚ */
+.menu {
+  background:#8b0000;
+  padding:15px;
+  text-align:center;
+}
+.menu a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold;
+}
+.menu a:hover {
+  text-decoration:underline;
+}
+
+/* CABECERA */
+.header {
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("img/logrono2.jpg");
+  background-size:cover;
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+}
+
+/* SECCIONES */
+section {
+  max-width:1100px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:14px;
+}
+
+/* TARJETAS */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card {
+  background:#fafafa;
+  padding:20px;
+  border-radius:12px;
+}
+.card h3 {
+  margin-top:0;
+}
+
+/* MAPA */
+#map {
+  height:450px;
+  border-radius:14px;
+}
+
+/* ENLACES */
+a.link {
+  color:#8b0000;
+  font-weight:bold;
+  text-decoration:none;
+}
+a.link:hover {
+  text-decoration:underline;
+}
+
+footer {
+  text-align:center;
+  color:#777;
+  margin:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacer-logrono.html">Qué hacer</a>
+  <a href="bares-logrono.html">Bares</a>
+  <a href="restaurantes-logrono.html">Restaurantes</a>
+  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+</nav>
+
+<div class="header">
+  <h1>Qué hacer en Logroño</h1>
+  <p>Planes imprescindibles para disfrutar la ciudad</p>
+</div>
+
+<section>
+<h2>⭐ Imprescindibles en Logroño</h2>
+
+<div class="cards">
+  <div class="card">
+    <h3>Pasear por el Parque del Ebro</h3>
+    <p>Uno de los paseos más agradables de la ciudad, ideal para desconectar y disfrutar del entorno natural.</p>
+  </div>
+
+  <div class="card">
+    <h3>Descubrir el casco antiguo</h3>
+    <p>Calles con historia, plazas tranquilas y algunos de los bares más tradicionales.</p>
+  </div>
+
+  <div class="card">
+    <h3>Visitar la Concatedral</h3>
+    <p>Un punto clave del centro histórico y una parada imprescindible para conocer la ciudad.</p>
+  </div>
+
+  <div class="card">
+    <h3>Ambiente de la Calle Laurel</h3>
+    <p>Famosa por sus pinchos, vinos y ambiente animado durante todo el año.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📍 Mapa de planes en Logroño</h2>
+<div id="map"></div>
+</section>
+
+<section>
+<h2ℹ️ Consejos locales</h2>
+<p>
+Si es tu primera vez en Logroño, combina un paseo tranquilo por el Ebro con una visita al casco antiguo.
+Evita las horas punta si buscas un ambiente más relajado.
+</p>
+<p>
+👉 También puedes ver dónde <a class="link" href="bares-logrono.html">salir de noche en Logroño</a>
+o dónde <a class="link" href="restaurantes-logrono.html">comer bien</a>.
+</p>
+</section>
+
+<footer>
+Página creada por TFPerson · Guía turística independiente
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map("map").setView([42.466,-2.445],14);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap"
+}).addTo(map);
+
+L.marker([42.4692,-2.4484]).addTo(map).bindPopup("Parque del Ebro");
+L.marker([42.4665,-2.4449]).addTo(map).bindPopup("Casco antiguo");
+L.marker([42.4672,-2.4442]).addTo(map).bindPopup("Concatedral");
+L.marker([42.4668,-2.4446]).addTo(map).bindPopup("Calle Laurel");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Qué hacer hoy en Logroño | Planes y tiempo</title>
+<meta name="description" content="Descubre qué hacer hoy en Logroño con planes recomendados y el tiempo actual.">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  line-height:1.6;
+}
+
+/* MENÚ */
+.menu {
+  background:#8b0000;
+  padding:15px;
+  text-align:center;
+}
+.menu a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold;
+}
+.menu a:hover {
+  text-decoration:underline;
+}
+
+/* CABECERA */
+.header {
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono5.jpg");
+  background-size:cover;
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+}
+
+/* SECCIONES */
+section {
+  max-width:1100px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:14px;
+}
+
+/* TIEMPO */
+.weather {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#f0f0f0;
+  padding:20px;
+  border-radius:12px;
+}
+.weather span {
+  font-size:18px;
+}
+
+/* PLANES */
+.plan {
+  background:#fafafa;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+.plan span {
+  display:block;
+  color:#666;
+  font-size:14px;
+  margin-top:5px;
+}
+
+/* ENLACES */
+a.link {
+  color:#8b0000;
+  font-weight:bold;
+  text-decoration:none;
+}
+a.link:hover {
+  text-decoration:underline;
+}
+
+footer {
+  text-align:center;
+  color:#777;
+  margin:40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacer-logrono.html">Qué hacer</a>
+  <a href="bares-logrono.html">Bares</a>
+  <a href="restaurantes-logrono.html">Restaurantes</a>
+  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+</nav>
+
+<div class="header">
+  <h1>Qué hacer hoy en Logroño</h1>
+  <p>Planes para hoy según el tiempo</p>
+</div>
+
+<section>
+<h2>🌤️ El tiempo hoy en Logroño</h2>
+
+<div class="weather">
+  <span id="temp">Cargando temperatura…</span>
+  <span id="desc"></span>
+</div>
+</section>
+
+<section>
+<h2>📅 Planes recomendados para hoy</h2>
+
+<div class="plan">
+<strong>Paseo por el Parque del Ebro</strong>
+<span>Ideal si hace buen tiempo</span>
+</div>
+
+<div class="plan">
+<strong>Ambiente en la Calle Laurel</strong>
+<span>Perfecto a cualquier hora</span>
+</div>
+
+<div class="plan">
+<strong>Copas en la zona centro</strong>
+<span>Buen plan si refresca por la noche</span>
+</div>
+</section>
+
+<section>
+<h2>ℹ️ Consejo local</h2>
+<p id="consejo">
+Cargando recomendación según el tiempo…
+</p>
+
+<p>
+👉 También puedes ver <a class="link" href="bares-logrono.html">bares para esta noche</a>
+o <a class="link" href="restaurantes-logrono.html">dónde comer hoy</a>.
+</p>
+</section>
+
+<footer>
+Página creada por TFPerson · Guía turística independiente
+</footer>
+
+<script>
+fetch("https://api.open-meteo.com/v1/forecast?latitude=42.466&longitude=-2.445&current_weather=true")
+.then(res => res.json())
+.then(data => {
+  const temp = data.current_weather.temperature;
+  const code = data.current_weather.weathercode;
+
+  document.getElementById("temp").innerText = `🌡️ ${temp}°C`;
+
+  let desc = "Buen tiempo";
+  let consejo = "Es un buen día para pasear y disfrutar al aire libre.";
+
+  if (code > 50) {
+    desc = "Tiempo inestable";
+    consejo = "Mejor planes tranquilos y bares cubiertos.";
+  }
+
+  document.getElementById("desc").innerText = desc;
+  document.getElementById("consejo").innerText = consejo;
+});
+</script>
+
+</body>
+</html>
