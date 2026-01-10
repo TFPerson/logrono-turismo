@@ -1,282 +1,278 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <title>Qué hacer en Logroño | Guía local completa</title>
+  <meta name="description" content="Qué hacer en Logroño: bares, restaurantes, historia, planes y fotos de la comunidad.">
 
-  <!-- GOOGLE ADSENSE -->
+  <!-- Adsense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036883301"
     crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8">
-  <title>Logroño Turismo | Guía para descubrir la capital del vino</title>
-  <meta name="description" content="Descubre Logroño: qué ver, dónde comer, mejores bares, historia y planes para disfrutar la capital del vino.">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- FUENTE -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <!-- ESTILOS -->
   <style>
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:#f5f6f8;
-      color:#333;
-      overflow-x:hidden;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
     }
 
-    /* ANIMACIONES */
-    .fade-up{
-      opacity:0;
-      transform:translateY(30px);
-      transition:all 0.8s ease;
+    /* ===== MENU ===== */
+    nav.menu {
+      background: #7a0c0c;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .fade-up.show{
-      opacity:1;
-      transform:translateY(0);
+    .menu-logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    /* MENÚ */
-    .menu{
-      background:#7a0c0c;
-      padding:14px 24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:100;
-      animation:slideDown 0.8s ease;
+    .menu-logo img {
+      height: 42px;
+      margin-right: 10px;
     }
 
-    @keyframes slideDown{
-      from{transform:translateY(-100%);opacity:0}
-      to{transform:translateY(0);opacity:1}
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: bold;
+      font-size: 15px;
     }
 
-    .menu-logo a{
-      display:flex;
-      align-items:center;
-      color:white;
-      text-decoration:none;
-      font-weight:600;
-      font-size:22px;
+    .menu-links a:hover {
+      text-decoration: underline;
     }
 
-    .menu-logo img{
-      height:42px;
-      margin-right:10px;
+    /* ===== HERO ===== */
+    .hero {
+      padding: 110px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("img/logrono1.jpg") center/cover;
     }
 
-    .menu-links a{
-      color:white;
-      text-decoration:none;
-      margin-left:18px;
-      font-size:15px;
+    .hero img {
+      height: 110px;
+      margin-bottom: 20px;
+      animation: zoomIn 1s ease;
     }
 
-    .menu-links a:hover{
-      text-decoration:underline;
+    .hero h1 {
+      font-size: 48px;
+      margin: 10px 0;
+      animation: fadeUp 1.2s ease;
     }
 
-    /* HERO */
-    .hero{
-      padding:110px 20px;
-      text-align:center;
-      color:white;
-      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55));
+    .hero p {
+      font-size: 22px;
+      max-width: 700px;
+      margin: auto;
+      animation: fadeUp 1.5s ease;
     }
 
-    .hero img{
-      height:110px;
-      margin-bottom:20px;
-      animation:zoomIn 1s ease;
+    @keyframes zoomIn {
+      from { transform: scale(.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
-    @keyframes zoomIn{
-      from{transform:scale(.7);opacity:0}
-      to{transform:scale(1);opacity:1}
+    @keyframes fadeUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .hero h1{
-      font-size:48px;
-      margin:10px 0;
+    /* ===== SUBIR FOTO ===== */
+    .subir-foto {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px;
+      background: linear-gradient(135deg, #7a0c0c, #a31212);
+      color: white;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,.25);
     }
 
-    .hero p{
-      font-size:22px;
-      max-width:700px;
-      margin:auto;
+    .subir-foto h2 {
+      font-size: 32px;
     }
 
-    /* CONTENIDO */
-    .contenedor{
-      max-width:1100px;
-      margin:-60px auto 60px;
-      background:white;
-      padding:50px;
-      border-radius:18px;
-      box-shadow:0 20px 40px rgba(0,0,0,.08);
+    .subir-foto p {
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
-    .contenedor h2{
-      text-align:center;
-      color:#7a0c0c;
-      font-size:32px;
+    .subir-foto input {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      background: white;
+      border-radius: 10px;
     }
 
-    .contenedor p{
-      text-align:center;
-      max-width:800px;
-      margin:15px auto;
+    .subir-foto button {
+      background: white;
+      color: #7a0c0c;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    /* BLOQUES */
-    .bloques{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:30px;
-      margin-top:50px;
+    #estadoSubida {
+      margin-top: 15px;
+      font-weight: bold;
     }
 
-    .bloque{
-      background:#fafafa;
-      padding:30px;
-      border-radius:16px;
-      text-align:center;
-      cursor:pointer;
-      transition:transform .3s, box-shadow .3s;
+    /* ===== GALERIA ===== */
+    .galeria {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 20px;
     }
 
-    .bloque:hover{
-      transform:translateY(-8px);
-      box-shadow:0 15px 30px rgba(0,0,0,.12);
+    .galeria h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #7a0c0c;
     }
 
-    .bloque h3{
-      color:#7a0c0c;
-      margin-bottom:10px;
+    #galeriaFotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
     }
 
-    footer{
-      background:#1f1f1f;
-      color:#aaa;
-      text-align:center;
-      padding:25px;
-      font-size:14px;
+    .foto-item {
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transition: transform .3s;
     }
 
-    footer strong{color:white}
+    .foto-item:hover {
+      transform: scale(1.05);
+    }
 
-    @media(max-width:768px){
-      .menu{flex-direction:column}
-      .menu-links{margin-top:10px}
-      .hero h1{font-size:36px}
-      .contenedor{margin:-40px 15px 40px;padding:30px}
+    .foto-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDOQ5dteZNoVzI_fjLBlcojlHTz5XNdrVE",
-    authDomain: "logrono-turismo.firebaseapp.com",
-    projectId: "logrono-turismo",
-    storageBucket: "logrono-turismo.firebasestorage.app",
-    messagingSenderId: "539211283140",
-    appId: "1:539211283140:web:d50d20b8fe22aa84d46791",
-    measurementId: "G-9CLWQXYM8V"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </head>
 
 <body>
 
-  <!-- MENÚ -->
-  <nav class="menu">
-    <div class="menu-logo">
-      <a href="index.html">
-        <img src="img/logo.png" alt="Logroño Turismo">
-        <span>Logroño Turismo</span>
-      </a>
-    </div>
-
-    <div class="menu-links">
-      <a href="index.html">Inicio</a>
-      <a href="que-hacer-logrono.html">Qué hacer</a>
-      <a href="bares-logrono.html">Bares</a>
-      <a href="restaurantes-logrono.html">Restaurantes</a>
-      <a href="hoy-en-logrono.html">Hoy en Logroño</a>
-      <a href="historia-logrono.html">Historia</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
+<!-- MENU -->
+<nav class="menu">
+  <div class="menu-logo">
     <img src="img/logo.png" alt="Logroño Turismo">
-    <h1 class="fade-up">Descubre Logroño</h1>
-    <p class="fade-up">La capital del vino, la gastronomía y el buen ambiente</p>
-  </section>
-
-  <!-- CONTENIDO -->
-  <div class="contenedor">
-    <h2 class="fade-up">Tu guía turística de Logroño</h2>
-    <p class="fade-up">Planes, bares, restaurantes y cultura para disfrutar la ciudad como un local.</p>
-
-    <div class="bloques">
-      <div class="bloque fade-up" onclick="location.href='bares-logrono.html'">
-        <h3>🍷 Mejores bares</h3>
-        <p>Pinchos, vinos y ambiente único.</p>
-      </div>
-
-      <div class="bloque fade-up" onclick="location.href='restaurantes-logrono.html'">
-        <h3>🍽️ Restaurantes</h3>
-        <p>Cocina riojana y opciones para todos.</p>
-      </div>
-
-      <div class="bloque fade-up" onclick="location.href='que-hacer-logrono.html'">
-        <h3>📍 Qué hacer</h3>
-        <p>Planes culturales y turísticos.</p>
-      </div>
-
-      <div class="bloque fade-up" onclick="location.href='historia-logrono.html'">
-        <h3>📜 Historia</h3>
-        <p>Descubre el pasado de Logroño.</p>
-      </div>
-    </div>
+    Logroño Turismo
   </div>
+  <div class="menu-links">
+    <a href="index.html">Inicio</a>
+    <a href="que-hacer-logrono.html">Qué hacer</a>
+    <a href="bares-logrono.html">Bares</a>
+    <a href="restaurantes-logrono.html">Restaurantes</a>
+    <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+    <a href="historia-logrono.html">Historia</a>
+  </div>
+</nav>
 
-  <footer>
-    © 2026 Logroño Turismo · Proyecto creado por <strong>TFPerson</strong>
-  </footer>
+<!-- HERO -->
+<section class="hero">
+  <img src="img/logo.png" alt="Logroño Turismo">
+  <h1>Descubre Logroño</h1>
+  <p>La capital del vino, la gastronomía y el buen ambiente</p>
+</section>
 
-  <!-- SCRIPT ANIMACIONES -->
-  <script>
-    const elementos = document.querySelectorAll('.fade-up');
+<!-- SUBIR FOTO -->
+<section class="subir-foto">
+  <h2>📸 Sube tu foto en Logroño</h2>
+  <p>Comparte tu mejor momento en la ciudad</p>
+  <input type="file" id="fotoInput" accept="image/*">
+  <button onclick="subirFoto()">Subir foto</button>
+  <p id="estadoSubida"></p>
+</section>
 
-    const mostrar = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    },{threshold:0.2});
+<!-- GALERIA -->
+<section class="galeria">
+  <h2>🖼️ Fotos de la comunidad</h2>
+  <div id="galeriaFotos"></div>
+</section>
 
-    elementos.forEach(el=>mostrar.observe(el));
-  </script>
+<!-- FIREBASE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL, listAll } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDQG5dteZNoVzfJLB1cojUHTzSXndrVE",
+    authDomain: "logrono-turismo.firebaseapp.com",
+    projectId: "logrono-turismo",
+    storageBucket: "logrono-turismo.appspot.com",
+    messagingSenderId: "539211283140",
+    appId: "1:539211283140:web:d50d20b8fe22aa84d46791"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
+
+  window.subirFoto = async function () {
+    const input = document.getElementById("fotoInput");
+    const estado = document.getElementById("estadoSubida");
+
+    if (!input.files.length) {
+      estado.textContent = "❌ Selecciona una imagen";
+      return;
+    }
+
+    const file = input.files[0];
+    const nombre = Date.now() + "-" + file.name;
+    const storageRef = ref(storage, "fotos-usuarios/" + nombre);
+
+    estado.textContent = "⏳ Subiendo foto...";
+
+    try {
+      await uploadBytes(storageRef, file);
+      estado.textContent = "✅ Foto subida correctamente";
+      input.value = "";
+      cargarGaleria();
+    } catch {
+      estado.textContent = "❌ Error al subir la foto";
+    }
+  };
+
+  async function cargarGaleria() {
+    const galeria = document.getElementById("galeriaFotos");
+    galeria.innerHTML = "";
+
+    const carpetaRef = ref(storage, "fotos-usuarios/");
+    const lista = await listAll(carpetaRef);
+
+    for (const item of lista.items) {
+      const url = await getDownloadURL(item);
+      const div = document.createElement("div");
+      div.className = "foto-item";
+      div.innerHTML = `<img src="${url}">`;
+      galeria.appendChild(div);
+    }
+  }
+
+  cargarGaleria();
+</script>
 
 </body>
 </html>
