@@ -2,7 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Qué hacer en Logroño | Guía local completa</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
   <meta name="description" content="Qué hacer en Logroño: bares, restaurantes, historia, planes y fotos de la comunidad.">
 
   <!-- Adsense -->
@@ -170,6 +174,79 @@
       height: 100%;
       object-fit: cover;
     }
+
+/* ========================= */
+/* 📱 DISEÑO PARA MÓVILES */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* MENU */
+  nav.menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-logo {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .menu-links a {
+    margin: 6px 12px 6px 0;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero img {
+    height: 90px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  /* SUBIR FOTO */
+  .subir-foto {
+    margin: 40px 15px;
+    padding: 30px 20px;
+  }
+
+  .subir-foto h2 {
+    font-size: 26px;
+  }
+
+  .subir-foto button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* GALERIA */
+  .galeria {
+    margin: 50px 10px;
+  }
+
+  .galeria h2 {
+    font-size: 28px;
+  }
+
+  #galeriaFotos {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
   </style>
 </head>
 
