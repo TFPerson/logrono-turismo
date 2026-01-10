@@ -1,194 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036083301"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<title>Qué hacer en Logroño | Guía local completa</title>
+<head>
 
-<link rel="icon" type="image/png" href="favicon.png">
+  <!-- GOOGLE ADSENSE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036883301"
+    crossorigin="anonymous"></script>
 
-<meta name="description" content="Qué hacer en Logroño: bares, restaurantes, planes, mapa interactivo y agenda. Guía local para disfrutar la ciudad.">
+  <meta charset="UTF-8">
+  <title>Logroño Turismo | Qué ver, comer y hacer en Logroño</title>
+  <meta name="description" content="Guía turística de Logroño: qué ver, dónde comer, bares, historia y planes para disfrutar la ciudad.">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f4f4f4;
-  line-height:1.6;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
 
-/* MENÚ */
-.menu {
-  background:#8b0000;
-  padding:15px;
-  text-align:center;
-}
-.menu a {
-  color:white;
-  text-decoration:none;
-  margin:0 12px;
-  font-weight:bold;
-}
-.menu a:hover {
-  text-decoration:underline;
-}
+    /* MENÚ */
+    .menu {
+      background: #8b0000;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* HERO */
-.hero {
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono1.jpg");
-  background-size:cover;
-  color:white;
-  padding:120px 20px;
-  text-align:center;
-}
+    .menu-logo a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+    }
 
-/* SECCIONES */
-section {
-  max-width:1100px;
-  margin:60px auto;
-  background:white;
-  padding:40px;
-  border-radius:14px;
-}
+    .menu-logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
 
-/* BUSCADOR */
-input {
-  width:100%;
-  padding:14px;
-  font-size:16px;
-}
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
 
-/* GALERÍA */
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.gallery img {
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:12px;
-}
+    .menu-links a:hover {
+      text-decoration: underline;
+    }
 
-/* RANKINGS */
-.rank {
-  background:#fafafa;
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:12px;
-}
+    /* HERO */
+    .hero {
+      background: #8b0000;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-/* MAPA */
-.filters button {
-  margin:5px;
-  padding:10px 16px;
-  border:none;
-  border-radius:20px;
-  background:#8b0000;
-  color:white;
-  cursor:pointer;
-}
-#map {
-  height:450px;
-  border-radius:14px;
-}
+    .hero img {
+      height: 100px;
+      margin-bottom: 20px;
+    }
 
-footer {
-  text-align:center;
-  color:#777;
-  margin:40px 0;
-}
-</style>
+    .hero h1 {
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      font-size: 20px;
+    }
+
+    /* CONTENIDO */
+    .contenedor {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .bloques {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .bloque {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .bloque h3 {
+      color: #8b0000;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav class="menu">
-  <a href="index.html">Inicio</a>
-  <a href="que-hacer-logrono.html">Qué hacer</a>
-  <a href="bares-logrono.html">Bares</a>
-  <a href="restaurantes-logrono.html">Restaurantes</a>
-  <a href="hoy-en-logrono.html">Hoy en Logroño</a>
-  <a href="historia-logrono.html">Historia</a>
+  <!-- MENÚ -->
+  <nav class="menu">
+    <div class="menu-logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="Logroño Turismo">
+        <span>Logroño Turismo</span>
+      </a>
+    </div>
 
-</nav>
+    <div class="menu-links">
+      <a href="index.html">Inicio</a>
+      <a href="que-hacer-logrono.html">Qué hacer</a>
+      <a href="bares-logrono.html">Bares</a>
+      <a href="restaurantes-logrono.html">Restaurantes</a>
+      <a href="hoy-en-logrono.html">Hoy en Logroño</a>
+      <a href="historia-logrono.html">Historia</a>
+    </div>
+  </nav>
 
-<div class="hero">
-  <h1>Qué hacer en Logroño</h1>
-  <p>Guía local para disfrutar la ciudad sin prisas</p>
-</div>
+  <!-- HERO / PORTADA -->
+  <section class="hero">
+    <img src="img/logo.png" alt="Logroño Turismo">
+    <h1>Descubre Logroño</h1>
+    <p>Qué ver, dónde comer y cómo disfrutar la capital del vino</p>
+  </section>
 
-<section>
-<h2>🔍 Busca un plan</h2>
-<input id="buscador" placeholder="Ej: bares, paseo, noche, gratis…" onkeyup="buscar()">
-<ul id="resultados"></ul>
-</section>
+  <!-- CONTENIDO -->
+  <div class="contenedor">
+    <h2>Guía turística de Logroño</h2>
+    <p>
+      Logroño es una ciudad acogedora, famosa por sus vinos, su gastronomía y su ambiente.
+      En esta web encontrarás todo lo necesario para disfrutarla al máximo.
+    </p>
 
-<section>
-<h2>⭐ Rankings populares</h2>
-<div class="rank">✔ Qué hacer en Logroño de noche</div>
-<div class="rank">✔ Mejores bares de Logroño</div>
-<div class="rank">✔ Planes gratis en Logroño</div>
-<div class="rank">✔ Qué ver en Logroño en un día</div>
-</section>
+    <div class="bloques">
+      <div class="bloque">
+        <h3>🍷 Bares</h3>
+        <p>Los mejores bares y zonas de pinchos.</p>
+      </div>
+      <div class="bloque">
+        <h3>🍽️ Restaurantes</h3>
+        <p>Dónde comer bien en Logroño.</p>
+      </div>
+      <div class="bloque">
+        <h3>📍 Qué hacer</h3>
+        <p>Planes, visitas y actividades.</p>
+      </div>
+      <div class="bloque">
+        <h3>📜 Historia</h3>
+        <p>El pasado y la identidad de la ciudad.</p>
+      </div>
+    </div>
+  </div>
 
-<section>
-<h2>📍 Mapa interactivo</h2>
-<div class="filters">
-<button onclick="filtrar('todos')">Todo</button>
-<button onclick="filtrar('bar')">Bares</button>
-<button onclick="filtrar('plan')">Planes</button>
-</div>
-<div id="map"></div>
-</section>
-
-<section>
-<h2>📸 Logroño en imágenes</h2>
-<div class="gallery">
-  <img src="img/logrono1.jpg">
-  <img src="img/logrono2.jpg">
-  <img src="img/logrono3.jpg">
-  <img src="img/logrono4.jpg">
-  <img src="img/logrono5.jpg">
-</div>
-</section>
-
-<footer>
-Página creada por TFPerson · Guía turística independiente
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const data=["bares","noche","paseo","gratis","restaurantes","planes"];
-function buscar(){
-  const q=document.getElementById("buscador").value.toLowerCase();
-  document.getElementById("resultados").innerHTML=
-    data.filter(d=>d.includes(q)).map(x=>"<li>"+x+"</li>").join("");
-}
-
-const map=L.map("map").setView([42.466,-2.445],14);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
-
-const sitios=[
-{tipo:"bar",n:"Calle Laurel",c:[42.4668,-2.4446]},
-{tipo:"plan",n:"Parque del Ebro",c:[42.4692,-2.4484]}
-];
-
-let markers=[];
-function filtrar(t){
-  markers.forEach(m=>map.removeLayer(m));
-  markers=[];
-  sitios.forEach(s=>{
-    if(t==="todos"||s.tipo===t){
-      markers.push(L.marker(s.c).addTo(map).bindPopup(s.n));
-    }
-  });
-}
-filtrar("todos");
-</script>
+  <footer>
+    © 2026 Logroño Turismo · Página creada por <strong>TFPerson</strong>
+  </footer>
 
 </body>
 </html>
