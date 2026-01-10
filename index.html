@@ -264,6 +264,66 @@
 .footer-legal a:hover {
   text-decoration: underline;
 }
+/* ===== COOKIE BANNER ===== */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1f1f1f;
+  color: #eee;
+  padding: 20px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 9999;
+}
+
+#cookie-banner p {
+  margin: 0;
+  font-size: 14px;
+  max-width: 700px;
+}
+
+#cookie-banner a {
+  color: #f5c77a;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  margin-top: 10px;
+}
+
+.cookie-buttons button {
+  border: none;
+  padding: 10px 18px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#acceptCookies {
+  background: #7a0c0c;
+  color: white;
+}
+
+#rejectCookies {
+  background: #555;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #cookie-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cookie-buttons button {
+    margin: 10px 5px 0;
+  }
+}
 
   </style>
 </head>
@@ -378,6 +438,37 @@
     <a href="politica-privacidad.html">Política de privacidad</a>
   </p>
 </footer>
+<div id="cookie-banner">
+  <p>
+    Usamos cookies para mejorar la experiencia del usuario y mostrar publicidad personalizada.
+    Puedes aceptar o rechazar su uso.
+    <a href="politica-privacidad.html">Más información</a>
+  </p>
+
+  <div class="cookie-buttons">
+    <button id="acceptCookies">Aceptar</button>
+    <button id="rejectCookies">Rechazar</button>
+  </div>
+</div>
+<script>
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const rejectBtn = document.getElementById("rejectCookies");
+
+  if (!localStorage.getItem("cookiesDecision")) {
+    cookieBanner.style.display = "flex";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesDecision", "accepted");
+    cookieBanner.style.display = "none";
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesDecision", "rejected");
+    cookieBanner.style.display = "none";
+  });
+</script>
 
 </body>
 </html>
