@@ -13,172 +13,169 @@
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- FUENTE MODERNA -->
+  <!-- FUENTE -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#f5f6f8;
+      color:#333;
+      overflow-x:hidden;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f5f6f8;
-      color: #333;
+    /* ANIMACIONES */
+    .fade-up{
+      opacity:0;
+      transform:translateY(30px);
+      transition:all 0.8s ease;
+    }
+
+    .fade-up.show{
+      opacity:1;
+      transform:translateY(0);
     }
 
     /* MENÚ */
-    .menu {
-      background: #7a0c0c;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .menu{
+      background:#7a0c0c;
+      padding:14px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      animation:slideDown 0.8s ease;
     }
 
-    .menu-logo a {
-      display: flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 22px;
+    @keyframes slideDown{
+      from{transform:translateY(-100%);opacity:0}
+      to{transform:translateY(0);opacity:1}
     }
 
-    .menu-logo img {
-      height: 42px;
-      margin-right: 10px;
+    .menu-logo a{
+      display:flex;
+      align-items:center;
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      font-size:22px;
     }
 
-    .menu-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: 400;
-      font-size: 15px;
+    .menu-logo img{
+      height:42px;
+      margin-right:10px;
     }
 
-    .menu-links a:hover {
-      text-decoration: underline;
+    .menu-links a{
+      color:white;
+      text-decoration:none;
+      margin-left:18px;
+      font-size:15px;
+    }
+
+    .menu-links a:hover{
+      text-decoration:underline;
     }
 
     /* HERO */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55));
-      padding: 100px 20px;
-      text-align: center;
-      color: white;
+    .hero{
+      padding:110px 20px;
+      text-align:center;
+      color:white;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55));
     }
 
-    .hero img {
-      height: 110px;
-      margin-bottom: 20px;
+    .hero img{
+      height:110px;
+      margin-bottom:20px;
+      animation:zoomIn 1s ease;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin: 10px 0;
-      font-weight: 600;
+    @keyframes zoomIn{
+      from{transform:scale(.7);opacity:0}
+      to{transform:scale(1);opacity:1}
     }
 
-    .hero p {
-      font-size: 22px;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.95;
+    .hero h1{
+      font-size:48px;
+      margin:10px 0;
+    }
+
+    .hero p{
+      font-size:22px;
+      max-width:700px;
+      margin:auto;
     }
 
     /* CONTENIDO */
-    .contenedor {
-      max-width: 1100px;
-      margin: -60px auto 60px;
-      background: white;
-      padding: 50px;
-      border-radius: 18px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    .contenedor{
+      max-width:1100px;
+      margin:-60px auto 60px;
+      background:white;
+      padding:50px;
+      border-radius:18px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
     }
 
-    .contenedor h2 {
-      text-align: center;
-      color: #7a0c0c;
-      font-size: 32px;
-      margin-bottom: 20px;
+    .contenedor h2{
+      text-align:center;
+      color:#7a0c0c;
+      font-size:32px;
     }
 
-    .contenedor p {
-      text-align: center;
-      font-size: 17px;
-      max-width: 800px;
-      margin: 0 auto;
+    .contenedor p{
+      text-align:center;
+      max-width:800px;
+      margin:15px auto;
     }
 
     /* BLOQUES */
-    .bloques {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+    .bloques{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:30px;
+      margin-top:50px;
     }
 
-    .bloque {
-      background: #fafafa;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+    .bloque{
+      background:#fafafa;
+      padding:30px;
+      border-radius:16px;
+      text-align:center;
+      cursor:pointer;
+      transition:transform .3s, box-shadow .3s;
     }
 
-    .bloque:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    .bloque:hover{
+      transform:translateY(-8px);
+      box-shadow:0 15px 30px rgba(0,0,0,.12);
     }
 
-    .bloque h3 {
-      color: #7a0c0c;
-      font-size: 20px;
-      margin-bottom: 10px;
+    .bloque h3{
+      color:#7a0c0c;
+      margin-bottom:10px;
     }
 
-    .bloque p {
-      font-size: 15px;
+    footer{
+      background:#1f1f1f;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
     }
 
-    /* FOOTER */
-    footer {
-      background: #1f1f1f;
-      color: #aaa;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
+    footer strong{color:white}
 
-    footer strong {
-      color: white;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .menu {
-        flex-direction: column;
-      }
-
-      .menu-links {
-        margin-top: 10px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .contenedor {
-        margin: -40px 15px 40px;
-        padding: 30px;
-      }
+    @media(max-width:768px){
+      .menu{flex-direction:column}
+      .menu-links{margin-top:10px}
+      .hero h1{font-size:36px}
+      .contenedor{margin:-40px 15px 40px;padding:30px}
     }
   </style>
 </head>
@@ -207,45 +204,56 @@
   <!-- HERO -->
   <section class="hero">
     <img src="img/logo.png" alt="Logroño Turismo">
-    <h1>Descubre Logroño</h1>
-    <p>La capital del vino, la gastronomía y el buen ambiente</p>
+    <h1 class="fade-up">Descubre Logroño</h1>
+    <p class="fade-up">La capital del vino, la gastronomía y el buen ambiente</p>
   </section>
 
   <!-- CONTENIDO -->
   <div class="contenedor">
-    <h2>Tu guía turística de Logroño</h2>
-    <p>
-      Encuentra los mejores planes para disfrutar Logroño como un local:
-      bares, restaurantes, historia y actividades imprescindibles.
-    </p>
+    <h2 class="fade-up">Tu guía turística de Logroño</h2>
+    <p class="fade-up">Planes, bares, restaurantes y cultura para disfrutar la ciudad como un local.</p>
 
     <div class="bloques">
-      <div class="bloque" onclick="location.href='bares-logrono.html'">
+      <div class="bloque fade-up" onclick="location.href='bares-logrono.html'">
         <h3>🍷 Mejores bares</h3>
         <p>Pinchos, vinos y ambiente único.</p>
       </div>
 
-      <div class="bloque" onclick="location.href='restaurantes-logrono.html'">
+      <div class="bloque fade-up" onclick="location.href='restaurantes-logrono.html'">
         <h3>🍽️ Restaurantes</h3>
         <p>Cocina riojana y opciones para todos.</p>
       </div>
 
-      <div class="bloque" onclick="location.href='que-hacer-logrono.html'">
+      <div class="bloque fade-up" onclick="location.href='que-hacer-logrono.html'">
         <h3>📍 Qué hacer</h3>
         <p>Planes culturales y turísticos.</p>
       </div>
 
-      <div class="bloque" onclick="location.href='historia-logrono.html'">
+      <div class="bloque fade-up" onclick="location.href='historia-logrono.html'">
         <h3>📜 Historia</h3>
         <p>Descubre el pasado de Logroño.</p>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Logroño Turismo · Proyecto creado por <strong>TFPerson</strong>
   </footer>
+
+  <!-- SCRIPT ANIMACIONES -->
+  <script>
+    const elementos = document.querySelectorAll('.fade-up');
+
+    const mostrar = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    },{threshold:0.2});
+
+    elementos.forEach(el=>mostrar.observe(el));
+  </script>
 
 </body>
 </html>
