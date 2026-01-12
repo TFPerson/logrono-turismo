@@ -1,101 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036083301"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<title>Bares en Logroño | Salir de noche y vinos</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Bares en Logroño | Mejores bares por zonas y categorías</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Guía completa de bares en Logroño: bares para desayunar, bares para comer y bares de copas. Recomendaciones locales.">
 
-<meta name="description" content="Guía completa de bares en Logroño: zonas para salir de noche, vinos, copas y mapa interactivo.">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036083301"
+    crossorigin="anonymous"></script>
 
-<style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f4f4f4;
-  line-height:1.6;
-}
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-/* MENÚ */
-.menu {
-  background:#8b0000;
-  padding:15px;
-  text-align:center;
-}
-.menu a {
-  color:white;
-  text-decoration:none;
-  margin:0 12px;
-  font-weight:bold;
-}
-.menu a:hover {
-  text-decoration:underline;
-}
+  <style>
+    body {
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      line-height:1.6;
+    }
 
-/* CABECERA */
-.header {
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono4.jpg");
-  background-size:cover;
-  color:white;
-  padding:90px 20px;
-  text-align:center;
-}
+    /* MENU */
+    nav.menu {
+      background:#8b0000;
+      padding:15px;
+      text-align:center;
+    }
 
-/* SECCIONES */
-section {
-  max-width:1100px;
-  margin:60px auto;
-  background:white;
-  padding:40px;
-  border-radius:14px;
-}
+    nav.menu a {
+      color:white;
+      text-decoration:none;
+      margin:0 12px;
+      font-weight:bold;
+    }
 
-/* RANKINGS */
-.rank {
-  background:#fafafa;
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:15px;
-}
+    nav.menu a:hover {
+      text-decoration:underline;
+    }
 
-/* MAPA */
-.filters button {
-  margin:5px;
-  padding:10px 16px;
-  border:none;
-  border-radius:20px;
-  background:#8b0000;
-  color:white;
-  cursor:pointer;
-}
-#map {
-  height:450px;
-  border-radius:14px;
-}
+    /* HERO */
+    .header {
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("img/logrono4.jpg");
+      background-size:cover;
+      color:white;
+      padding:90px 20px;
+      text-align:center;
+    }
 
-/* ENLACES */
-a.link {
-  color:#8b0000;
-  font-weight:bold;
-  text-decoration:none;
-}
-a.link:hover {
-  text-decoration:underline;
-}
+    section {
+      max-width:1100px;
+      margin:60px auto;
+      background:white;
+      padding:40px;
+      border-radius:14px;
+    }
 
-footer {
-  text-align:center;
-  color:#777;
-  margin:40px 0;
-}
-</style>
+    h2 {
+      color:#8b0000;
+      margin-bottom:20px;
+    }
+
+    h3 {
+      margin-top:35px;
+      color:#333;
+    }
+
+    .rank {
+      background:#fafafa;
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:15px;
+    }
+
+    /* MAPA */
+    #map {
+      height:450px;
+      border-radius:14px;
+    }
+
+    footer {
+      text-align:center;
+      color:#777;
+      margin:40px 0;
+    }
+
+    a.link {
+      color:#8b0000;
+      font-weight:bold;
+      text-decoration:none;
+    }
+
+    a.link:hover {
+      text-decoration:underline;
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- MENU -->
 <nav class="menu">
   <a href="index.html">Inicio</a>
   <a href="que-hacer-logrono.html">Qué hacer</a>
@@ -103,176 +109,89 @@ footer {
   <a href="restaurantes-logrono.html">Restaurantes</a>
   <a href="hoy-en-logrono.html">Hoy en Logroño</a>
   <a href="historia-logrono.html">Historia</a>
-
-
 </nav>
 
+<!-- HERO -->
 <div class="header">
   <h1>Bares en Logroño</h1>
-  <p>Dónde salir de noche, vinos y copas</p>
+  <p>Bares para desayunar, comer y salir de copas</p>
 </div>
 
+<!-- ZONAS -->
 <section>
-<h2>🍷 Zonas para salir en Logroño</h2>
+  <h2>🍷 Zonas para salir en Logroño</h2>
 
-<div class="rank">
-<strong>Calle Laurel</strong><br>
-La zona más famosa, ideal para vinos, pinchos y ambiente animado.
-</div>
-
-<div class="rank">
-<strong>Calle San Juan</strong><br>
-Alternativa más tranquila, con bares tradicionales y menos masificación.
-</div>
-
-<div class="rank">
-<strong>Zona Centro</strong><br>
-Copas, pubs y música hasta tarde.
-</div>
+  <div class="rank"><strong>Calle Laurel</strong><br>La zona más famosa para vinos y pinchos.</div>
+  <div class="rank"><strong>Calle San Juan</strong><br>Más tranquila y tradicional.</div>
+  <div class="rank"><strong>Zona Centro</strong><br>Bares de copas y ambiente nocturno.</div>
 </section>
 
+<!-- BARES POR CATEGORÍAS -->
 <section>
-<!-- ============================= -->
-<!-- 🥐 BARES DE DESAYUNO -->
-<!-- ============================= -->
-<h3>🥐 Bares para desayunar en Logroño</h3>
 
-<div class="rank">
-  <strong>Café Moderno</strong><br>
-  Clásico del centro, ideal para desayunos tranquilos y buen café.
-</div>
+  <h2>⭐ Mejores bares de Logroño por categoría</h2>
 
-<div class="rank">
-  <strong>Café Tizona</strong><br>
-  Muy conocido por sus tostadas y bollería artesanal.
-</div>
+  <h3 id="bares-desayuno">🥐 Bares para desayunar</h3>
 
-<div class="rank">
-  <strong>La Tavina</strong><br>
-  Espacio moderno con desayunos cuidados y ambiente relajado.
-</div>
+  <div class="rank"><strong>Café Moderno</strong><br>Clásico del centro para desayunos tranquilos.</div>
+  <div class="rank"><strong>Café Tizona</strong><br>Muy conocido por tostadas y bollería.</div>
+  <div class="rank"><strong>La Tavina</strong><br>Espacio moderno y cuidado.</div>
+  <div class="rank"><strong>Cafetería Robusta</strong><br>Café de especialidad.</div>
 
-<div class="rank">
-  <strong>Cafetería Robusta</strong><br>
-  Café de especialidad y opción perfecta para empezar el día.
-</div>
+  <h3 id="bares-comer">🍽️ Bares para comer</h3>
 
-<hr>
+  <div class="rank"><strong>Bar Soriano</strong><br>Pinchos famosos, rápido y popular.</div>
+  <div class="rank"><strong>Bar Ángel</strong><br>Conocido por los champiñones.</div>
+  <div class="rank"><strong>La Taberna del Laurel</strong><br>Buena relación calidad-precio.</div>
+  <div class="rank"><strong>El Soldado de Tudelilla</strong><br>Bar-restaurante tradicional.</div>
 
-<!-- ============================= -->
-<!-- 🍽️ BARES PARA COMER -->
-<!-- ============================= -->
-<h3>🍽️ Bares para comer en Logroño</h3>
+  <h3 id="bares-copas">🍸 Bares de copas</h3>
 
-<div class="rank">
-  <strong>Bar Soriano</strong><br>
-  Famoso por sus pinchos, ideal para comer algo rápido.
-</div>
+  <div class="rank"><strong>Norman</strong><br>Uno de los clásicos de la noche.</div>
+  <div class="rank"><strong>Maldeamores</strong><br>Copas tranquilas y buen ambiente.</div>
+  <div class="rank"><strong>Stereo</strong><br>Música indie y alternativa.</div>
+  <div class="rank"><strong>Kubik</strong><br>Público joven y música comercial.</div>
 
-<div class="rank">
-  <strong>Bar Ángel</strong><br>
-  Muy popular por sus champiñones y ambiente animado.
-</div>
+  <p style="font-size:14px;color:#666;margin-top:25px;">
+    Selección basada en experiencia local y popularidad. No es publicidad.
+  </p>
 
-<div class="rank">
-  <strong>La Taberna del Laurel</strong><br>
-  Buena relación calidad-precio en pleno corazón gastronómico.
-</div>
-
-<div class="rank">
-  <strong>El Soldado de Tudelilla</strong><br>
-  Bar-restaurante tradicional con platos abundantes.
-</div>
-
-<hr>
-
-<!-- ============================= -->
-<!-- 🍸 BARES DE COPAS -->
-<!-- ============================= -->
-<h3>🍸 Bares de copas en Logroño</h3>
-
-<div class="rank">
-  <strong>Norman</strong><br>
-  Uno de los bares de copas más conocidos de la ciudad.
-</div>
-
-<div class="rank">
-  <strong>Maldeamores</strong><br>
-  Ambiente tranquilo para copas con buena música.
-</div>
-
-<div class="rank">
-  <strong>Stereo</strong><br>
-  Música indie y alternativa, muy popular entre locales.
-</div>
-
-<div class="rank">
-  <strong>Kubik</strong><br>
-  Público joven y música comercial hasta altas horas.
-</div>
-
-<p style="font-size:14px;color:#666;margin-top:20px;">
-Selección basada en popularidad, experiencia local y ambiente habitual.  
-No es publicidad ni listado oficial.
-</p>
-
-
-
-
-
-</div>
 </section>
 
+<!-- MAPA -->
 <section>
-<h2>📍 Mapa de bares en Logroño</h2>
-
-<div class="filters">
-<button onclick="filtrar('todos')">Todo</button>
-<button onclick="filtrar('bar')">Bares</button>
-</div>
-
-<div id="map"></div>
+  <h2>📍 Mapa de zonas de bares</h2>
+  <div id="map"></div>
 </section>
 
+<!-- CONSEJOS -->
 <section>
-<h2>ℹ️ Consejos locales</h2>
-<p>
-Para disfrutar mejor, evita las horas punta en Laurel los fines de semana.
-Si buscas algo más tranquilo, San Juan es una excelente opción.
-</p>
-<p>
-👉 También puedes ver <a class="link" href="restaurantes-logrono.html">dónde comer en Logroño</a>
-o <a class="link" href="hoy-en-logrono.html">planes para hoy</a>.
-</p>
+  <h2>ℹ️ Consejos locales</h2>
+  <p>Evita las horas punta en Laurel los fines de semana. Para algo más tranquilo, San Juan es ideal.</p>
+  <p>
+    👉 También puedes ver <a class="link" href="restaurantes-logrono.html">dónde comer en Logroño</a> o
+    <a class="link" href="hoy-en-logrono.html">planes para hoy</a>.
+  </p>
 </section>
 
 <footer>
-Página creada por TFPerson · Guía turística independiente
+  Página creada por Logroño Turismo · Guía local independiente
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const map = L.map("map").setView([42.466,-2.445],14);
+  const map = L.map("map").setView([42.466,-2.445],14);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap"
+  }).addTo(map);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "© OpenStreetMap"
-}).addTo(map);
-
-const bares = [
-  {n:"Calle Laurel", c:[42.4668,-2.4446]},
-  {n:"Calle San Juan", c:[42.4678,-2.4435]},
-  {n:"Zona Centro", c:[42.4655,-2.4465]}
-];
-
-let markers=[];
-function filtrar(tipo){
-  markers.forEach(m=>map.removeLayer(m));
-  markers=[];
-  bares.forEach(b=>{
-    markers.push(L.marker(b.c).addTo(map).bindPopup(b.n));
+  [
+    {n:"Calle Laurel",c:[42.4668,-2.4446]},
+    {n:"Calle San Juan",c:[42.4678,-2.4435]},
+    {n:"Zona Centro",c:[42.4655,-2.4465]}
+  ].forEach(z=>{
+    L.marker(z.c).addTo(map).bindPopup(z.n);
   });
-}
-filtrar("todos");
 </script>
 
 </body>

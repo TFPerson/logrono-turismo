@@ -5,400 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Qué hacer en Logroño | Guía local completa</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description" content="Qué hacer en Logroño: bares, restaurantes, planes y recomendaciones locales.">
 
-  <meta name="description" content="Qué hacer en Logroño: bares, restaurantes, historia, planes y fotos de la comunidad.">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Adsense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9406985036883301"
     crossorigin="anonymous"></script>
 
-  <!-- ESTILOS -->
   <style>
     body {
-      margin: 0;
+      margin:0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background:#f4f4f4;
     }
 
-    /* ===== MENU ===== */
+    /* MENU */
     nav.menu {
-      background: #7a0c0c;
-      padding: 12px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background:#7a0c0c;
+      padding:12px 25px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
     .menu-logo {
-      display: flex;
-      align-items: center;
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
+      display:flex;
+      align-items:center;
+      color:white;
+      font-size:22px;
+      font-weight:bold;
     }
 
     .menu-logo img {
-      height: 42px;
-      margin-right: 10px;
+      height:42px;
+      margin-right:10px;
     }
 
     .menu-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: bold;
-      font-size: 15px;
+      color:white;
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:bold;
+      font-size:15px;
     }
 
     .menu-links a:hover {
-      text-decoration: underline;
+      text-decoration:underline;
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero {
-      padding: 110px 20px;
-      text-align: center;
-      color: white;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+      padding:100px 20px;
+      text-align:center;
+      color:white;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
         url("img/logrono1.jpg") center/cover;
     }
 
     .hero img {
-      height: 110px;
-      margin-bottom: 20px;
-      animation: zoomIn 1s ease;
+      height:100px;
+      margin-bottom:20px;
     }
 
     .hero h1 {
-      font-size: 48px;
-      margin: 10px 0;
-      animation: fadeUp 1.2s ease;
+      font-size:46px;
+      margin-bottom:10px;
     }
 
     .hero p {
-      font-size: 22px;
-      max-width: 700px;
-      margin: auto;
-      animation: fadeUp 1.5s ease;
+      font-size:22px;
+      max-width:700px;
+      margin:auto;
     }
 
-    @keyframes zoomIn {
-      from { transform: scale(.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    /* BUSCADOR */
+    .buscador {
+      max-width:800px;
+      margin:60px auto;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 15px 35px rgba(0,0,0,.12);
+      text-align:center;
     }
 
-    @keyframes fadeUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .buscador h2 {
+      color:#7a0c0c;
+      margin-bottom:20px;
     }
 
-    /* ===== SUBIR FOTO ===== */
-    .subir-foto {
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 40px;
-      background: linear-gradient(135deg, #7a0c0c, #a31212);
-      color: white;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,.25);
+    #buscadorInput {
+      width:100%;
+      padding:16px;
+      font-size:18px;
+      border-radius:12px;
+      border:1px solid #ddd;
     }
 
-    .subir-foto h2 {
-      font-size: 32px;
+    #resultados {
+      margin-top:25px;
+      text-align:left;
     }
 
-    .subir-foto p {
-      font-size: 18px;
-      margin-bottom: 20px;
+    .resultado {
+      padding:14px;
+      border-bottom:1px solid #eee;
     }
 
-    .subir-foto input {
-      display: block;
-      margin: 20px auto;
-      padding: 10px;
-      background: white;
-      border-radius: 10px;
+    .resultado a {
+      text-decoration:none;
+      color:#7a0c0c;
+      font-weight:bold;
     }
 
-    .subir-foto button {
-      background: white;
-      color: #7a0c0c;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
+    .resultado span {
+      display:block;
+      font-size:14px;
+      color:#555;
     }
 
-    #estadoSubida {
-      margin-top: 15px;
-      font-weight: bold;
+    /* CONTENIDO */
+    section.contenido {
+      max-width:900px;
+      margin:60px auto;
+      background:white;
+      padding:45px;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.1);
     }
 
-    /* ===== GALERIA ===== */
-    .galeria {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 20px;
+    section.contenido h2 {
+      color:#7a0c0c;
+      text-align:center;
+      margin-bottom:25px;
     }
 
-    .galeria h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #7a0c0c;
+    section.contenido p {
+      font-size:18px;
+      line-height:1.7;
+      margin-bottom:18px;
     }
 
-    #galeriaFotos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    footer {
+      background:#1f1f1f;
+      color:#aaa;
+      text-align:center;
+      padding:25px 15px;
+      font-size:14px;
     }
 
-    .foto-item {
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.15);
-      transition: transform .3s;
+    footer a {
+      color:#ddd;
+      text-decoration:none;
+      margin:0 6px;
     }
 
-    .foto-item:hover {
-      transform: scale(1.05);
+    footer a:hover {
+      text-decoration:underline;
     }
 
-    .foto-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @media (max-width:768px) {
+      .hero h1 { font-size:32px; }
+      .hero p { font-size:18px; }
+      .buscador { margin:40px 15px; padding:30px 20px; }
+      section.contenido { margin:40px 15px; padding:30px 20px; }
     }
-
-/* ========================= */
-/* 📱 DISEÑO PARA MÓVILES */
-/* ========================= */
-@media (max-width: 768px) {
-
-  /* MENU */
-  nav.menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-logo {
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-
-  .menu-links {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .menu-links a {
-    margin: 6px 12px 6px 0;
-    font-size: 14px;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 80px 15px;
-  }
-
-  .hero img {
-    height: 90px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  /* SUBIR FOTO */
-  .subir-foto {
-    margin: 40px 15px;
-    padding: 30px 20px;
-  }
-
-  .subir-foto h2 {
-    font-size: 26px;
-  }
-
-  .subir-foto button {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  /* GALERIA */
-  .galeria {
-    margin: 50px 10px;
-  }
-
-  .galeria h2 {
-    font-size: 28px;
-  }
-
-  #galeriaFotos {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-}
-/* ===== FOOTER LEGAL ===== */
-.footer-legal {
-  background: #1f1f1f;
-  color: #aaa;
-  text-align: center;
-  padding: 25px 15px;
-  font-size: 14px;
-}
-
-.footer-legal a {
-  color: #ddd;
-  text-decoration: none;
-  margin: 0 6px;
-}
-
-.footer-legal a:hover {
-  text-decoration: underline;
-}
-/* ===== COOKIE BANNER ===== */
-#cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #1f1f1f;
-  color: #eee;
-  padding: 20px;
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  z-index: 9999;
-}
-
-#cookie-banner p {
-  margin: 0;
-  font-size: 14px;
-  max-width: 700px;
-}
-
-#cookie-banner a {
-  color: #f5c77a;
-  text-decoration: underline;
-}
-
-.cookie-buttons {
-  margin-top: 10px;
-}
-
-.cookie-buttons button {
-  border: none;
-  padding: 10px 18px;
-  margin-left: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#acceptCookies {
-  background: #7a0c0c;
-  color: white;
-}
-
-#rejectCookies {
-  background: #555;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  #cookie-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cookie-buttons button {
-    margin: 10px 5px 0;
-  }
-}
-/* ===== CONTENIDO PRINCIPAL HOME ===== */
-.contenido-principal {
-  max-width: 900px;
-  margin: 80px auto;
-  background: white;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.1);
-}
-
-.contenido-principal h2 {
-  color: #7a0c0c;
-  font-size: 32px;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.contenido-principal p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-@media (max-width: 768px) {
-  .contenido-principal {
-    margin: 40px 15px;
-    padding: 30px 20px;
-  }
-
-  .contenido-principal h2 {
-    font-size: 26px;
-  }
-
-  .contenido-principal p {
-    font-size: 16px;
-  }
-}
-/* ===== QUIENES SOMOS ===== */
-.quienes-somos {
-  max-width: 900px;
-  margin: 80px auto;
-  background: #ffffff;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.1);
-}
-
-.quienes-somos h2 {
-  color: #7a0c0c;
-  font-size: 30px;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.quienes-somos p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-@media (max-width: 768px) {
-  .quienes-somos {
-    margin: 40px 15px;
-    padding: 30px 20px;
-  }
-
-  .quienes-somos h2 {
-    font-size: 26px;
-  }
-
-  .quienes-somos p {
-    font-size: 16px;
-  }
-}
-
   </style>
 </head>
 
@@ -418,7 +190,6 @@
     <a href="hoy-en-logrono.html">Hoy en Logroño</a>
     <a href="historia-logrono.html">Historia</a>
     <a href="contacto.html">Contacto</a>
-
   </div>
 </nav>
 
@@ -429,231 +200,101 @@
   <p>La capital del vino, la gastronomía y el buen ambiente</p>
 </section>
 
-<!-- SUBIR FOTO -->
-<section class="subir-foto">
-  <h2>📸 Sube tu foto en Logroño</h2>
-  <p>Comparte tu mejor momento en la ciudad</p>
-  <input type="file" id="fotoInput" accept="image/*">
-  <button onclick="subirFoto()">Subir foto</button>
-  <p id="estadoSubida"></p>
+<!-- BUSCADOR PRINCIPAL -->
+<section class="buscador">
+  <h2>🔍 ¿Qué estás buscando en Logroño?</h2>
+  <input
+    type="text"
+    id="buscadorInput"
+    placeholder="Ej: bares de copas, desayunar, dónde comer…"
+    onkeyup="buscar()"
+  >
+  <div id="resultados"></div>
 </section>
 
-<!-- GALERIA -->
-<section class="galeria">
-  <h2>🖼️ Fotos de la comunidad</h2>
-  <div id="galeriaFotos"></div>
-</section>
-<section class="contenido-principal">
-  <h2>Descubre Logroño, una ciudad para disfrutar</h2>
+<!-- CONTENIDO -->
+<section class="contenido">
+  <h2>Guía local de Logroño</h2>
 
   <p>
-    Logroño es una de las ciudades más acogedoras del norte de España y un destino
-    perfecto para quienes buscan buena gastronomía, vino de calidad y un ambiente
-    único durante todo el año. Situada a orillas del río Ebro, es conocida como la
-    capital del vino de La Rioja y una parada imprescindible del Camino de Santiago.
-  </p>
-<!-- BLOQUE GUÍA RÁPIDA -->
-<div style="border:1px solid #e5e5e5;padding:16px;border-radius:8px;background:#fafafa;margin:20px 0;">
-  <h2>📌 Guía rápida de Logroño</h2>
-  <ul>
-    <li><strong>📍 Qué ver:</strong> Casco antiguo, Calle Laurel, Concatedral</li>
-    <li><strong>🍷 Dónde comer:</strong> Calle Laurel y alrededores</li>
-    <li><strong>⏱️ Tiempo recomendado:</strong> 1–2 días</li>
-    <li><strong>🗓️ Mejor época:</strong> Primavera y otoño</li>
-  </ul>
-</div>
-
-<!-- TABLA PRÁCTICA -->
-<h2>🗺️ Planes imprescindibles en Logroño</h2>
-<table style="width:100%;border-collapse:collapse;margin:20px 0;">
-  <thead>
-    <tr style="background:#f0f0f0;">
-      <th style="border:1px solid #ddd;padding:8px;">Plan</th>
-      <th style="border:1px solid #ddd;padding:8px;">Tiempo</th>
-      <th style="border:1px solid #ddd;padding:8px;">Ideal para</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="border:1px solid #ddd;padding:8px;">Casco antiguo</td>
-      <td style="border:1px solid #ddd;padding:8px;">2–3 horas</td>
-      <td style="border:1px solid #ddd;padding:8px;">Primera visita</td>
-    </tr>
-    <tr>
-      <td style="border:1px solid #ddd;padding:8px;">Ruta de pinchos</td>
-      <td style="border:1px solid #ddd;padding:8px;">2 horas</td>
-      <td style="border:1px solid #ddd;padding:8px;">Parejas y amigos</td>
-    </tr>
-    <tr>
-      <td style="border:1px solid #ddd;padding:8px;">Bodegas cercanas</td>
-      <td style="border:1px solid #ddd;padding:8px;">Medio día</td>
-      <td style="border:1px solid #ddd;padding:8px;">Amantes del vino</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- BLOQUE CONSEJOS LOCALES -->
-<div style="border-left:4px solid #c62828;padding:16px;background:#fff5f5;margin:20px 0;">
-  <h2>💡 Consejos locales</h2>
-  <ul>
-    <li>La mejor hora para ir de pinchos es entre las 13:00 y 15:00.</li>
-    <li>Evita el coche en el centro, se recorre mejor a pie.</li>
-    <li>Entre semana hay menos colas y mejores precios.</li>
-  </ul>
-</div>
-
-<!-- FAQ SEO -->
-<h2>❓ Preguntas frecuentes sobre Logroño</h2>
-
-<h3>¿Cuántos días se necesitan para ver Logroño?</h3>
-<p>Con uno o dos días es suficiente para conocer lo esencial, aunque un fin de semana permite disfrutarlo con calma.</p>
-
-<h3>¿Cuál es la mejor época para visitar Logroño?</h3>
-<p>La primavera y el otoño son ideales por el clima y el ambiente, especialmente durante eventos gastronómicos.</p>
-
-<h3>¿Es caro comer en Logroño?</h3>
-<p>No, Logroño ofrece una excelente relación calidad-precio, sobre todo en bares de pinchos y menús del día.</p>
-
-
-  <p>
-    Pasear por el casco antiguo de Logroño es descubrir calles llenas de historia,
-    bares tradicionales y restaurantes donde se respira cultura del vino. La famosa
-    Calle Laurel y sus alrededores ofrecen una experiencia gastronómica única, con
-    pinchos, tapas y vinos que atraen tanto a locales como a visitantes.
+    Logroño es una ciudad ideal para disfrutar de la gastronomía, el vino y el ambiente
+    del norte de España. Tanto si vienes un día como un fin de semana, encontrarás
+    planes para todos los gustos.
   </p>
 
   <p>
-    Además de su oferta gastronómica, Logroño cuenta con numerosos espacios verdes,
-    museos, iglesias históricas y eventos culturales a lo largo del año. Desde rutas
-    enoturísticas por bodegas de prestigio hasta planes familiares y ocio nocturno,
-    la ciudad ofrece opciones para todos los gustos.
-  </p>
-
-  <p>
-    En <strong>Logroño Turismo</strong> encontrarás recomendaciones actualizadas sobre
-    qué hacer, dónde comer, qué bares visitar y los lugares más interesantes para
-    conocer la ciudad como un auténtico local.
-  </p>
-</section>
-<section class="quienes-somos">
-  <h2>Sobre Logroño Turismo</h2>
-
-  <p>
-    Logroño Turismo es un proyecto independiente creado con el objetivo de ofrecer
-    información útil, clara y actualizada sobre la ciudad de Logroño y su entorno.
-  </p>
-
-  <p>
-    Nuestra intención es ayudar tanto a visitantes como a residentes a descubrir
-    los mejores planes, bares, restaurantes, lugares de interés y actividades
-    culturales que ofrece la ciudad.
-  </p>
-
-  <p>
-    El contenido de esta web se elabora con carácter informativo, de forma honesta
-    y sin pertenecer a ninguna entidad oficial, con el fin de mostrar Logroño
-    desde un punto de vista cercano y local.
+    En esta web te ayudamos a descubrir qué hacer en Logroño, dónde comer bien,
+    qué bares visitar y cuáles son las mejores zonas para disfrutar como un local.
   </p>
 </section>
 
-<!-- FIREBASE -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getStorage, ref, uploadBytes, getDownloadURL, listAll } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDQG5dteZNoVzfJLB1cojUHTzSXndrVE",
-    authDomain: "logrono-turismo.firebaseapp.com",
-    projectId: "logrono-turismo",
-    storageBucket: "logrono-turismo.appspot.com",
-    messagingSenderId: "539211283140",
-    appId: "1:539211283140:web:d50d20b8fe22aa84d46791"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const storage = getStorage(app);
-
-  window.subirFoto = async function () {
-    const input = document.getElementById("fotoInput");
-    const estado = document.getElementById("estadoSubida");
-
-    if (!input.files.length) {
-      estado.textContent = "❌ Selecciona una imagen";
-      return;
-    }
-
-    const file = input.files[0];
-    const nombre = Date.now() + "-" + file.name;
-    const storageRef = ref(storage, "fotos-usuarios/" + nombre);
-
-    estado.textContent = "⏳ Subiendo foto...";
-
-    try {
-      await uploadBytes(storageRef, file);
-      estado.textContent = "✅ Foto subida correctamente";
-      input.value = "";
-      cargarGaleria();
-    } catch {
-      estado.textContent = "❌ Error al subir la foto";
-    }
-  };
-
-  async function cargarGaleria() {
-    const galeria = document.getElementById("galeriaFotos");
-    galeria.innerHTML = "";
-
-    const carpetaRef = ref(storage, "fotos-usuarios/");
-    const lista = await listAll(carpetaRef);
-
-    for (const item of lista.items) {
-      const url = await getDownloadURL(item);
-      const div = document.createElement("div");
-      div.className = "foto-item";
-      div.innerHTML = `<img src="${url}">`;
-      galeria.appendChild(div);
-    }
-  }
-
-  cargarGaleria();
-</script>
-<footer class="footer-legal">
-  <p>
-    © 2026 Logroño Turismo ·
-    <a href="contacto.html">Contacto</a> ·
-    <a href="aviso-legal.html">Aviso legal</a> ·
-    <a href="politica-privacidad.html">Política de privacidad</a>
-  </p>
+<footer>
+  © 2026 Logroño Turismo ·
+  <a href="contacto.html">Contacto</a> ·
+  <a href="aviso-legal.html">Aviso legal</a> ·
+  <a href="politica-privacidad.html">Política de privacidad</a>
 </footer>
-<div id="cookie-banner">
-  <p>
-    Usamos cookies para mejorar la experiencia del usuario y mostrar publicidad personalizada.
-    Puedes aceptar o rechazar su uso.
-    <a href="politica-privacidad.html">Más información</a>
-  </p>
 
-  <div class="cookie-buttons">
-    <button id="acceptCookies">Aceptar</button>
-    <button id="rejectCookies">Rechazar</button>
-  </div>
-</div>
+<!-- BUSCADOR SCRIPT -->
 <script>
-  const cookieBanner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("acceptCookies");
-  const rejectBtn = document.getElementById("rejectCookies");
+const busquedas = [
+  {
+    keywords: ["desayuno","desayunar","cafe"],
+    titulo: "Bares para desayunar",
+    descripcion: "Cafeterías y bares para empezar el día",
+    url: "bares-logrono.html#bares-desayuno"
+  },
+  {
+    keywords: ["comer","bares para comer","pinchos","tapas"],
+    titulo: "Bares para comer",
+    descripcion: "Pinchos y bares para comer bien",
+    url: "bares-logrono.html#bares-comer"
+  },
+  {
+    keywords: ["copas","bares de copas","noche","fiesta"],
+    titulo: "Bares de copas",
+    descripcion: "Las mejores opciones para salir por la noche",
+    url: "bares-logrono.html#bares-copas"
+  },
+  {
+    keywords: ["bares"],
+    titulo: "Bares en Logroño",
+    descripcion: "Zonas y bares más populares",
+    url: "bares-logrono.html"
+  },
+  {
+    keywords: ["restaurantes","comer bien","cena"],
+    titulo: "Restaurantes en Logroño",
+    descripcion: "Dónde comer bien en la ciudad",
+    url: "restaurantes-logrono.html"
+  }
+];
 
-  if (!localStorage.getItem("cookiesDecision")) {
-    cookieBanner.style.display = "flex";
+function buscar() {
+  const texto = document.getElementById("buscadorInput").value.toLowerCase();
+  const resultados = document.getElementById("resultados");
+  resultados.innerHTML = "";
+
+  if (texto.length < 2) return;
+
+  const filtrados = busquedas.filter(b =>
+    b.keywords.some(k => texto.includes(k))
+  );
+
+  if (!filtrados.length) {
+    resultados.innerHTML = "<p>No se han encontrado resultados.</p>";
+    return;
   }
 
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesDecision", "accepted");
-    cookieBanner.style.display = "none";
+  filtrados.forEach(b => {
+    resultados.innerHTML += `
+      <div class="resultado">
+        <a href="${b.url}">${b.titulo}</a>
+        <span>${b.descripcion}</span>
+      </div>
+    `;
   });
-
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesDecision", "rejected");
-    cookieBanner.style.display = "none";
-  });
+}
 </script>
 
 </body>
